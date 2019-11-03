@@ -9,3 +9,7 @@ The core functionality is complete, and a meal's title, steps, and URL can be ed
 ## Security
 
 To make testing and demoing easy, I have not yet added login functionality.
+
+## Demo
+
+A live demo is available at [lennon.dev/meals](https://lennon.dev/meals)
