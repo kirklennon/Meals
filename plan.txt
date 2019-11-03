@@ -1,0 +1,39 @@
+One table stores information for each meal, including name and recipe. It also inclues a non-binding label of suggested meal type (breakfast, lunch, etc.)
+
+User adds selected meals to the current week's plan, linking one meal slot to one meal:
+
+Weekday Lunch 1
+Weekday Lunch 2
+Monday Dinner
+Tuesday Dinner
+Wednesday Dinner
+Thursday Dinner
+Friday Dinner
+Saturday Breakfast
+Saturday Lunch
+Saturday Dinner
+Sunday Breakfast
+Sunday Lunch
+Sunday Dinner
+
+There's an additional 'Meal' option for dining out.
+
+The index page will show all meal slots with the currently assigned meal, if any. There will also be a meals page with all available meals. Clicking the name of any meal brings up a view page with the full details of it. The page will also include a dropdown menu with all of the slots so the user can choose a meal and assign it to a slot
+
+
+Option: the index page shows the assigned meal by using dropdown menus that contain the full list of meals. The user can change the meals by just scrolling through the available options and then using a save button at the bottom. Each row will have a view button beside the item name in order to jump straight to that menu item. 
+
+Option: Use current date to do something to default users to next meal to prepare?
+
+Option: When viewing menu, if it's assigned to any slot, display those slots.
+
+I need a linking table in SQL that will link recipe IDs to ingredient IDs, and an ingredients table with each ingredient. It's a many to many relationship.
+
+SQL joins
+
+Meals.label joins on Labels.id
+Slots.meal joins on Meals.id
+
+? haven't checked below
+Meals.id joins on Linking.meal
+Ingredients.id joins on Linking.ingredient

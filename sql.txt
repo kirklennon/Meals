@@ -1,0 +1,61 @@
+CREATE TABLE IF NOT EXISTS Meals (
+  meal_id int(10) NOT NULL auto_increment,
+  name varchar(255) NOT NULL,
+  instructions varchar(1024),
+  url varchar(255),
+  label int(10),
+  PRIMARY KEY  (meal_id) 
+);
+
+CREATE TABLE IF NOT EXISTS Labels (
+	label_id int(10) NOT NULL auto_increment,
+	name varchar(10) NOT NULL default '',
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS Ingredients (
+	ingredient_id int(10) NOT NULL auto_increment,
+	name varchar(255) NOT NULL default '',
+	PRIMARY KEY (ingredient_id)
+);
+
+INSERT INTO Ingredients (name) VALUES ('Milk');
+INSERT INTO Ingredients (name) VALUES ('Potatoes');
+INSERT INTO Ingredients (name) VALUES ('Tomato');
+INSERT INTO Ingredients (name) VALUES ('Avocado');
+INSERT INTO Ingredients (name) VALUES ('Tortillas');
+INSERT INTO Ingredients (name) VALUES ('Spaghetti');
+INSERT INTO Ingredients (name) VALUES ('Spaghetti Sauce');
+INSERT INTO Ingredients (name) VALUES ('Veggie Crumbles');
+
+
+CREATE TABLE IF NOT EXISTS Linking (
+	meal int(10) NOT NULL,
+	ingredient int(10) NOT NULL
+);
+
+INSERT INTO Labels (name) VALUES ('Breakfast');
+INSERT INTO Labels (name) VALUES ('Lunch');
+INSERT INTO Labels (name) VALUES ('Dinner');
+INSERT INTO Labels (name) VALUES ('Appetizer');
+
+CREATE TABLE IF NOT EXISTS Slots (
+  slot_id int(10) NOT NULL auto_increment,
+  name varchar(255) NOT NULL default '',
+  meal int(10),
+  PRIMARY KEY  (slot_id) 
+);
+
+INSERT INTO Slots (name) VALUES ('Weekday Lunch 1');
+INSERT INTO Slots (name) VALUES ('Weekday Lunch 2');
+INSERT INTO Slots (name) VALUES ('Monday Dinner');
+INSERT INTO Slots (name) VALUES ('Tuesday Dinner');
+INSERT INTO Slots (name) VALUES ('Wednesday Dinner');
+INSERT INTO Slots (name) VALUES ('Thursday Dinner');
+INSERT INTO Slots (name) VALUES ('Friday Dinner');
+INSERT INTO Slots (name) VALUES ('Saturday Breakfast');
+INSERT INTO Slots (name) VALUES ('Saturday Lunch');
+INSERT INTO Slots (name) VALUES ('Saturday Dinner');
+INSERT INTO Slots (name) VALUES ('Sunday Breakfast');
+INSERT INTO Slots (name) VALUES ('Sunday Lunch');
+INSERT INTO Slots (name) VALUES ('Sunday Dinner');
