@@ -3,6 +3,16 @@ require_once "pdo.php";
 require_once "util.php";
 session_start();
 
+if ( isset($_POST['confirm']) ) {
+	if ($_POST['confirm'] = 'confirmed' ) {
+	$stmt = $pdo->exec('UPDATE Slots SET meal = NULL');
+	$_SESSION['success'] = 'Slots cleared';
+	header( 'Location: index.php' );
+	return;
+	}
+
+}
+
 for($i=1; $i<=13; $i++) {
 	if ( !isset($_POST['slot'.$i]) ) continue;
 	$stmt = $pdo->prepare('UPDATE Slots
@@ -56,6 +66,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC) ) {
 }
 ?>
 </table>
+<form method="post"><p>Clear last week&rsquo;s selections (check to confirm)
+<input type="checkbox" name="confirm" value="confirmed">
+<input type="submit" value="Start New Week"></p>
+</form>
 <p><a href="new.php">Add New Meal</a></p>
 <p><a href="meals.php">View All Meals</a></p>
 
