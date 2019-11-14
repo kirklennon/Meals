@@ -62,8 +62,7 @@ countIng = 1;
 function addIng() {
 	var ingredient = document.getElementById("ing").value
 	var markup = `
-	<li>${ingredient}</li>
-	<input type="hidden" name="ingNum${countIng}" value="${ingredient}">
+	<li><a href="#" onclick="this.parentElement.remove(0);return false;">${ingredient}</a><input type="hidden" name="ingNum${countIng}" value="${ingredient}"></li>
 	`;
 	document.getElementById("ingList").insertAdjacentHTML('beforeend', markup);
 	document.getElementById("ing").value = '';

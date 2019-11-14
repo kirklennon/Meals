@@ -82,8 +82,8 @@ $countIng = 1;
 
 if ( count($ingredients) > 0 ) {
 	foreach( $ingredients as $ing ) {
-		echo('<li>'.htmlentities($ing)."</li>\n");
-		echo('<input type="hidden" name="ingNum'.$countIng.'" value="'.htmlentities($ing).'">'."\n");
+		echo('<li><a href="#" onclick="this.parentElement.remove(0);return false;">'.htmlentities($ing)."</a>\n");
+		echo('<input type="hidden" name="ingNum'.$countIng.'" value="'.htmlentities($ing).'">'."</li>\n");		
 		$countIng++;
 	}
 }
@@ -104,8 +104,7 @@ countIng = <?= $countIng ?>;
 function addIng() {
 	var ingredient = document.getElementById("ing").value
 	var markup = `
-	<li>${ingredient}</li>
-	<input type="hidden" name="ingNum${countIng}" value="${ingredient}">
+	<li><a href="#" onclick="this.parentElement.remove(0);return false;">${ingredient}</a><input type="hidden" name="ingNum${countIng}" value="${ingredient}"></li>
 	`;
 	document.getElementById("ingList").insertAdjacentHTML('beforeend', markup);
 	document.getElementById("ing").value = '';
