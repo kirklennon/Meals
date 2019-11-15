@@ -4,7 +4,7 @@ This is a family meal planning web application created in PHP. The main page con
 
 ## Minimum Viable Product
 
-The core functionality is complete, and a meal's title, steps, and URL can be edited, but you cannot remove any ingredients at the moment (only add more). You also cannot delete a meal entirely. You can reassign a different meal to a slot but there is no way to assign no meal, or to clear all slots to start over for a new week.
+The core functionality is complete, and a meal's title, steps, and URL can be edited. I finally added the ability to remove ingredients from a meal but it needs additional CSS styling to make it more clear. You cannot delete a meal entirely. You can reassign a different meal to a slot but there is no way to assign no meal. I added the ability to clear out all slots to start a new week.
 
 ## Security
 
